@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Submissions{% endblock %}
+
+{% block content %}
+<h1>All Submissions</h1>
+
+{% if rows %}
+    <p>Total: {{ rows|length }}</p>
+    {% for row in rows %}
+        <div class="submission">
+            <div class="sub-head">
+                <b>{{ row.name }}</b>
+                <span class="sub-email">{{ row.email }}</span>
+                <span class="sub-date">{{ row.created_at }}</span>
+            </div>
+            <p>{{ row.message }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No submissions yet. <a href="{{ url_for('form') }}">Submit the first one</a>.</p>
+{% endif %}
+{% endblock %}

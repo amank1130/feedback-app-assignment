@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h1>Welcome</h1>
+<p>This is a simple feedback app. You can submit your feedback and also check the submissions.</p>
+<br>
+<a class="btn" href="{{ url_for('form') }}">Submit Feedback</a>
+<a class="btn btn2" href="{{ url_for('submissions') }}">View Submissions</a>
+{% endblock %}
